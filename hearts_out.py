@@ -14,6 +14,7 @@ class Predict:
         dataset = dataset.astype('float32')
         self.data = dataset
 
+
     # convert an array of values into a dataset matrix
     def create_dataset(self, dataset, look_back=1):
         dataX, dataY = [], []
@@ -23,6 +24,7 @@ class Predict:
             dataY.append(dataset[i + look_back, 0])
         return numpy.array(dataX), numpy.array(dataY)
 
+    
     def train_model(self):
         # scale
         scaler = MinMaxScaler(feature_range=(0, 1))
