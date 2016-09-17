@@ -1,0 +1,14 @@
+import random
+import math
+
+
+with open("tset.txt","w") as text_file:
+    for x in xrange(10000):
+        divider = ","
+        if x == 9999:
+            divider = ""
+          
+        v = 80 + (math.sin(x*math.pi/1440)+1)*30 + random.uniform(0,10)
+        v = 1/v*60000
+
+        text_file.write("%s%s" % (v,divider))
